@@ -6,7 +6,7 @@ const path = require('path');
 const staticRoute = require('./routes/staticRouter');
 
 const app = express();
-const PORT = 8000;
+const PORT = 8000;// Port Number
 
 // using view engine-ejs for SSR
 app.set('view engine', 'ejs');
