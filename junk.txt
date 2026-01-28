@@ -6,6 +6,8 @@
     </ul> -->
 
 
+// This is the sample route code to save it for future ..
+
 // app.get('/test', async(req, res) => {
 //     const allURLs = await URL.find({});
 //     console.log(allURLs);
