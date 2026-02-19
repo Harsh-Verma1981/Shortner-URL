@@ -142,7 +142,7 @@ http://localhost:8000
 - A short URL will be generated like:
 
 ```js
-http://localhost:3000/url/abc123
+http://localhost:8000/url/abc123
 ```
 
 ---
@@ -217,7 +217,7 @@ https://www.google.com
 ```
 Short URL    : 
 ```js
-http://localhost:3000/XyZ12
+http://localhost:8000/url/XyZ12
 ```
 
 ❗ Common Issues & Fixes
@@ -244,9 +244,13 @@ http://localhost:3000/XyZ12
 
 📜 License
 MIT License
+
 👤 Author
+
 Harsh Verma
+
 GitHub: https://github.com/Harsh-Verma1981
+
 ⭐ If you like this project, give it a star!
 
 ---
