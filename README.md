@@ -29,6 +29,7 @@ Utilities : dotenv, shortid / nanoid
 
 ## 📂 Project Structure
 
+```js
 Shortner-URL/
 │
 ├── models/
@@ -45,7 +46,7 @@ Shortner-URL/
 ├── package-lock.json
 ├── .env # Environment variables
 └── README.md
-
+```
 
 ---
 
@@ -60,9 +61,10 @@ MongoDB (local or MongoDB Atlas)
 
 Check installation:
 
+```js
 node -v
 npm -v
-
+```
 
 ---
 
@@ -70,16 +72,18 @@ npm -v
 
 ### 1️⃣ Clone the Repository
 
+```js
 git clone https://github.com/Harsh-Verma1981/Shortner-URL.git
 cd Shortner-URL
-
+```
 
 ---
 
 ### 2️⃣ Install Dependencies
 
+```js
 npm install
-
+```
 
 ---
 
@@ -87,9 +91,10 @@ npm install
 
 Create a `.env` file in the root directory:
 
+```js
 PORT=3000
 MONGO_URI=mongodb://127.0.0.1:27017/urlShortener
-
+```
 
 > If using MongoDB Atlas, replace `MONGO_URI` with your cloud connection string.
 
@@ -106,13 +111,15 @@ mongod
 
 ### 5️⃣ Run the Application
 
+```js
 npm start
-
+```
 
 OR (if using nodemon):
 
+```js
 npm run dev
-
+```
 
 ---
 
@@ -120,8 +127,9 @@ npm run dev
 
 Open your browser and visit:
 
-http://localhost:3000
-
+```js
+http://localhost:8000
+```
 
 ---
 
@@ -133,8 +141,9 @@ http://localhost:3000
 - Click **Shorten**
 - A short URL will be generated like:
 
-http://localhost:3000/abc123
-
+```js
+http://localhost:3000/url/abc123
+```
 
 ---
 
@@ -142,8 +151,9 @@ http://localhost:3000/abc123
 
 Open the short URL in your browser:
 
-http://localhost:3000/abc123
-
+```js
+http://localhost:8000/url/abc123
+```
 
 ➡️ You will be redirected to the original website.
 
@@ -153,13 +163,14 @@ http://localhost:3000/abc123
 
 The following route handles redirection:
 
+```js
 GET /:shortId
-
+```
 
 ### Example Code:
 
 ```js
-app.get('/:shortId', async (req, res) => {
+app.get('/url/:shortId', async (req, res) => {
   try {
     const shortId = req.params.shortId;
     const url = await Url.findOne({ short: shortId });
@@ -173,7 +184,12 @@ app.get('/:shortId', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
+```
+
 🗄 MongoDB Schema
+
+```js
 const mongoose = require('mongoose');
 
 const urlSchema = new mongoose.Schema({
@@ -192,15 +208,25 @@ const urlSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Url', urlSchema);
+```
+
 📌 Example
-Original URL : https://www.google.com
-Short URL    : http://localhost:3000/XyZ12
+Original URL : 
+```js
+https://www.google.com
+```
+Short URL    : 
+```js
+http://localhost:3000/XyZ12
+```
+
 ❗ Common Issues & Fixes
 ❌ Short URL not redirecting
 ✔ Ensure MongoDB is connected
 ✔ Ensure GET /:shortId route exists
 ✔ Check field name used in schema
 ✔ Place redirect route AFTER other routes
+
 🚧 Future Enhancements
 - Click analytics
 - Custom short URLs
@@ -208,12 +234,14 @@ Short URL    : http://localhost:3000/XyZ12
 - Authentication
 - Deployment (Render / Railway)
 - UI improvements
+  
 🤝 Contributing
 1. Fork the repository
 2. Create a new branch
 3. Make changes
 4. Commit changes
 5. Open a Pull Request
+
 📜 License
 MIT License
 👤 Author
@@ -222,11 +250,3 @@ GitHub: https://github.com/Harsh-Verma1981
 ⭐ If you like this project, give it a star!
 
 ---
-
-If you want next:
-- 🔹 **Deployment README (Render / Railway)**
-- 🔹 **API documentation**
-- 🔹 **Interview-ready explanation of this project**
-- 🔹 **Better folder structure (MVC)**
-
-Just tell me 👍
