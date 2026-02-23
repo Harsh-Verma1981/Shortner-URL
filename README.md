@@ -38,8 +38,14 @@ Shortner-URL/
 ├── views/
 │ └── index.ejs # Frontend UI
 │
-├── public/
+|── public/
 │ └── styles.css # CSS file (if used)
+|
+|── controllers # nano id schema for URLs
+|
+|── routes # to handle different kind of request
+|
+|── views # ejs file for SSR 
 │
 ├── index.js # Main server file
 ├── package.json # Project metadata & dependencies
